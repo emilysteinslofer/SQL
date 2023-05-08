@@ -1,0 +1,34 @@
+--Create a clothing store database 
+
+CREATE TABLE clothing (id INTEGER PRIMARY KEY, name TEXT, quantity INTEGER, retail_price INTEGER, manufacturing_cost INTEGER);
+
+INSERT INTO clothing VALUES (1, "Red T-Shirt", 82, 19.99, 4.99);
+INSERT INTO clothing VALUES (2, "Black Hoodie", 41, 39.95, 10.99);
+INSERT INTO clothing VALUES (3, "Orange Long Sleeve", 18, 25.55, 12.00);
+INSERT INTO clothing VALUES (4, "Ripped Jeans", 65, 45.99, 25.00);
+INSERT INTO clothing VALUES (5, "Gray Socks", 73, 10.99, 5.00);
+INSERT INTO clothing VALUES (6, "Blue Graphic T-Shirt", 43, 25.99, 12.00);
+INSERT INTO clothing VALUES (7, "Yellow Graphic T-Shirt", 102, 3.99, .50);
+INSERT INTO clothing VALUES (8, "White Scrunchie", 93, 3.99, .5);
+INSERT INTO clothing VALUES (9, "Black Headband", 75, 4.99, .75); 
+INSERT INTO clothing VALUES (10, "White Headband", 68, 4.99, .75); 
+INSERT INTO clothing VALUES (11, "Brown Hat", 23, 14.99, 7);
+INSERT INTO clothing VALUES (12, "Black Belt", 43, 22.89, 10);
+INSERT INTO clothing VALUES (13, "Brown Belt", 32, 19.89, 9);
+INSERT INTO clothing VALUES (14, "White Sneakers", 65, 69.99, 35);
+INSERT INTO clothing VALUES (15, "Black Sneakers", 48, 65.99, 30);
+
+--Display the database ordered by retail price. 
+SELECT * FROM clothing
+ORDER BY retail_price asc;
+
+--What is the average manufacturing cost of a T-Shirt in this store? 
+SELECT AVG(manufacturing_cost) "avg manufacturing cost" 
+FROM clothing
+WHERE name LIKE '%T-Shirt%';
+
+--What are the 3 most costly items to produce?
+SELECT manufacturing_cost, name
+FROM clothing 
+ORDER BY manufacturing_cost desc
+limit 3;
