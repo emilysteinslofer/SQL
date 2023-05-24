@@ -1,3 +1,5 @@
+# In this project, I am querying a database to determine relevant information regarding this business.  
+
 --Provide a query that shows the invoices associated with each sales agent.
 SELECT emp.LastName, emp.Firstname, inv.InvoiceId
 FROM chinook.Employees emp 
